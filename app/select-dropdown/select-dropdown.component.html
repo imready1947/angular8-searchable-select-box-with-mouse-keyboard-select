@@ -1,0 +1,56 @@
+<div class="dd-container">
+	<div [ngClass]="setClassToSelectedBox ? setClassToSelectedBox : dd-control-container " (click)="toggle()" tabindex="0" #displayLabel>
+		<span class="dd-display-item" role="textbox">{{display}}
+			<div class="pull-right"><i class="fa fa-caret-down"></i></div>
+		</span>
+	</div>
+	<div class="dd-list-container" [hidden]="isListHide" [ngStyle]="setStyleObject" [ngClass]="setClassToDropdown">
+		<div class="chosen-drop">
+			<div class="chosen-search">
+				<input type="text"
+          class="drop-input"
+          [(ngModel)]="searchText"
+          (keypress)="onKeyPress($event)"
+          placeholder="{{searchPlaceholder}}"
+          aria-expanded="true"
+          aria-haspopup="true"
+          aria-autocomplete="list"
+          aria-owns="-chosen-search-result"
+          aria-activedescendant="-chosen-search-result-0"
+
+
+        #filterInput />
+		  </div>
+
+				<div class="dd-items-container" id="-chosen-search-result">
+					<!-- <div [attr.data-dd-value]="{id:'', display:'Select'}" class="dd-list-item" (click)="onItemSelect()" (mouseover)="onHover($event)" (mouseout)="onHover($event)">
+        {{placeholder}}
+      </div> -->
+					<ng-container *ngIf="items | textSearch : displayMember : searchText as result">
+						<ul>
+
+							<li 
+                #listItems 
+                [ngClass]=" { 'dd-active dd-hightlight-item' :isSelected(item)} "
+								class="dd-list-item " 
+                *ngFor="let item of items | textSearch : displayMember : searchText; let i=index "
+								role="option" 
+                id="{{'-chosen-search-result-'+i}}" 
+                (click)="onItemSelect(item) "
+								[attr.data-dd-value]="stringify(item)" 
+                (mouseover)="onHover($event) "
+								(mouseout)="onHover($event)" 
+                title="{{item[displayMember]}}">
+								{{item[displayMember]}}
+							</li>
+						</ul>
+						<p *ngIf="result.length == 0 ">
+							No results found
+						</p>
+					</ng-container>
+
+
+				</div>
+			</div>
+		</div>
+	</div>

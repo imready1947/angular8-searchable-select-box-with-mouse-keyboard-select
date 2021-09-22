@@ -1,0 +1,28 @@
+<!-- <form [formGroup]="myForm" (ngSubmit)="submit()">
+  <app-select-dropdown 
+    formControlName="member"
+    [displayMember]="'display'" 
+    [list]="list"
+  ></app-select-dropdown>
+  <button>Submit</button>
+</form>
+<div>
+  FormValue {{myForm.value | json}}
+</div> -->
+<br><br>
+<button (click)="updateData()">update Data</button>
+<app-select-dropdown 
+  [(ngModel)]="selectedId" 
+  [list]="list"
+  [displayMember]="filterKey"
+  [idMember]="'customId'"
+  [searchPlaceholder]="'Select Member'"
+  [setClassToDropdown]="'vaibhav'"
+  [setClassToSelectedBox]="'makeTransparent'"
+  placeholder="Select member"
+  (valueChanged)="onValueChange($event)"
+
+></app-select-dropdown>
+
+<p>{{selectedId}}</p>
+<br><br><br><br>
