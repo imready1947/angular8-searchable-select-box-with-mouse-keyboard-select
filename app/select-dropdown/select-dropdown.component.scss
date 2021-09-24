@@ -1,83 +1,73 @@
-.dd-container{
+.dd-container {
   position: relative;
   user-select: none;
-  
-  .dd-display-item{
-	  border: 1px solid #ddd;
-	  padding: 6px 10px;;
-	  border-radius: 3px;
-	  font-size: 15px;
-	  display: block;
-	  cursor: pointer;
-		height: 20px;
-	}
-	
-	.dd-list-container{
+
+  .dd-display-item {
+    border: 1px solid #ddd;
+    padding: 6px 10px;
+    border-radius: 3px;
+    font-size: 15px;
+    display: block;
+    cursor: pointer;
+  }
+
+  .dd-list-container {
     position: absolute;
-    height: 10px;
+    height: auto;
     box-sizing: border-box;
     min-width: 320px;
-		
-    width:100%;
+    width: 100%;
     padding: 0.5rem;
     border: 1px solid #d0d0d0;
-    top:30px;
-    background-color: #FFF;
-  
-	.chosen-drop{
-	  width: 100%;
-	  
-		.chosen-search{ 
-		  width: 100%;
-		  
-		  .drop-input{
-			  text-indent: 5px;
-			  font-size: 18px;
-			  z-index: 10;
-			  width: 100%;
-			  box-sizing: border-box;
-			}
-		  
-		}
-	}
-	
-	.dd-items-container{
-	  
-	  background-color: #fff;
-	  height: 40px;
-	  overflow-y: auto;
-	  
-	  ul { 
-	  
-	  list-style: none; 
-	  padding: 0; 
-	  margin: 0;
-	  
-		li{
-		  text-overflow: ellipsis; overflow: hidden;
-      white-space: nowrap;
-		}
-		
-		.dd-list-item{
-		  padding: 2px 5px;;
-		  cursor: pointer;
-		}
-		
-		.dd-active{
-		  background-color: #ddd;
-		}
-		
-		.dd-highlight-item{
-		  background-color: #00b7d4;
-		  color: #fff;
-		}
-		
-	  }
-	  
-	  
-	}
-    
-	}
-	
-  
+    top: 30px;
+    background-color: #fff;
+
+    .chosen-drop {
+      width: 100%;
+
+      .chosen-search {
+        width: 100%;
+
+        .drop-input {
+          text-indent: 5px;
+          font-size: 18px;
+          z-index: 10;
+          width: 100%;
+          box-sizing: border-box;
+        }
+      }
+    }
+
+    .dd-items-container {
+      background-color: #fff;
+      height: 100px;
+      overflow-y: auto;
+
+      ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+
+        li {
+          text-overflow: ellipsis;
+          overflow: hidden;
+          white-space: nowrap;
+        }
+
+        .dd-list-item {
+          padding: 2px 5px;
+          cursor: pointer;
+        }
+
+        .dd-active {
+          background-color: #ddd;
+        }
+
+        .dd-highlight-item {
+          background-color: #00b7d4;
+          color: #fff;
+        }
+      }
+    }
+  }
 }
